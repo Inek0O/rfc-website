@@ -1,0 +1,509 @@
+/*Custom Fonts*/
+@font-face{
+	font-family: Ubuntu;
+	src: url(fonts/Playfair_Display,Ubuntu/Ubuntu/Ubuntu-Regular.ttf)
+}
+
+@font-face{
+	font-family: PlayFair;
+	src: url(fonts/Playfair_Display,Ubuntu/Playfair_Display/static/PlayfairDisplayBolder.ttf)
+}
+
+@font-face{
+	font-family: Bebas;
+	src: url(fonts/Bebas_Neue/BebasNeue-Regular.ttf)
+}
+
+@font-face{
+	font-family: Roboto_Slab;
+	src: url(fonts/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf)
+}
+
+@font-face{
+  font-family: DM_Display;
+  src: url(fonts/DM_Serif_Display/DMSerifDisplay-Regular.ttf);
+}
+
+@keyframes color {
+  0%   { background: #aa3333; }
+  20%  { background: #b12b2b; }
+  40%  { background: #f02a2a; }
+  50%  { background: #f00000; }
+  60%  { background: #f02a2a; }
+  80%  { background: #b12b2b; }
+  100% { background: #aa3333; }
+}
+
+@keyframes textclip {
+	to {
+	  background-position: 200% center;
+	}
+}
+
+
+
+
+
+/*General Style*/
+* {
+  cursor: none;
+}
+
+*::selection{
+  color: #FFF;
+  background: black;
+}
+
+body {
+  animation: color 9s infinite linear;
+  margin: 0%;
+}
+
+#main{
+	-ms-overflow-style: none;
+        overflow: hidden;
+		overflow-x: hidden;
+        overflow-y: scroll;
+	background-color : #F0F0F0;
+	font-family : Roboto_Slab;
+  letter-spacing: 105%;
+	font-size : 23px;	
+  /*border-top : 7px solid black;*/
+  border-top : 7px solid black;
+  border-bottom : 7px solid black;
+	overflow: hidden;
+  justify-content: center;
+  align-items: center; 
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#main::-webkit-scrollbar{
+        display: none;
+}
+
+
+
+
+
+/*Custom Cursor*/
+.cursor {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: 1.5px solid black;
+  transition: all 200ms ease-out;
+  position: fixed;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  transform: translate(calc(-50% + 15px), -50%);
+  z-index: 1;
+}
+
+.cursor2 {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: black;
+  opacity: .9;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: width .3s, height .3s, opacity .3s;
+  z-index: 1;
+}
+
+.cursorinnerhover {
+  width: 50px;
+  height: 50px;
+  opacity: .5;
+  z-index: 1;
+}
+
+
+
+
+
+
+/*Floating Navigation Menu*/
+#haut{
+  text-align: center;
+  background-color: #FFF;
+  top: 0%;
+  left: 0%;
+  position: sticky;
+  width: 100%; 
+  height: min-content;
+  margin-inline-start: 0%;
+  z-index: 0;
+  border-bottom : 7px solid black;
+}
+
+#haut.onscroll{
+  position: fixed;
+}
+
+nav ul {
+  margin: 0%;
+  padding: 0px;
+  overflow: hidden;  
+  align-items: center;
+  text-align: center;
+}
+
+nav li {
+  list-style-type: none;            
+  display: inline;
+  padding: 1em;
+}
+
+nav li:hover {
+  margin-top: -2em;    
+  border-top-right-radius: 0.3em;              
+  border-top-left-radius: 0.3em;               
+  border-bottom-left-radius: 0.3em;           
+  border-bottom-right-radius: 0.3em;          
+  background-color: #e64040;   
+  transition: 0.3s;  
+}
+
+nav .menu {
+  display: inline-block;      
+  text-decoration: none;
+  font-weight: normal;   
+  padding: 15px 15px;        
+  color: #FFF;              
+}
+
+.menu{
+  font-family: Bebas;
+  border-bottom-left-radius: 0.3em;           
+  border-bottom-right-radius: 0.3em;  
+  font-size: 150%;
+  letter-spacing: 2px;
+}
+
+.menu:link {
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  text-decoration: none;
+  position: center;
+}
+
+.menu:active {
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.menu:visited{
+  color: rgb(40, 0, 0)
+}
+
+#current{
+  color: #9e1f1f;
+}
+
+#banner{
+  flex-wrap: nowrap;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  }
+
+#logo_top{
+  width: 20%;
+  margin: 0.5%;
+}
+
+
+
+
+
+
+/*News*/
+#news{
+  background-color: inherit;
+  height: min-content;
+  display: flex;
+  justify-content: center;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  font-size: 16px;
+  font-family: Roboto_Slab;
+  font-weight: 500;
+}
+
+.info{
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  padding: 1%;
+  width: max-content;
+}
+
+.titre_news{
+  font-size: 120%;
+}
+
+
+
+
+
+
+
+/*Titles Styles*/
+#div_titre{
+  justify-content: center;
+  align-items: center; 
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2%;
+}
+
+.titre{
+	color : rgb(0, 0, 0);
+	font-size: 300%;
+  font-weight: bold;
+	font-family : DM_Display;
+	text-align: center;	
+  display: block;
+	margin-left: 20px;
+  margin-right: 20px;
+  width: min-content;
+  justify-content: center;
+}
+
+#titre_u{
+	color: red;
+	font-family: DM_Display;
+	text-transform: uppercase;
+  display: block;
+  font-size: 350%;
+	background-image: linear-gradient(
+	  100deg,
+	  #701a1a 0%, 
+	  #9e1f1f 29%,
+	  #db0b0b 48%,
+	  #9e1f1f 67%,
+	  #701a1a 100%
+	);
+	background-size: auto auto;
+	background-clip: border-box;
+	background-size: 200% auto;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: textclip 2s linear infinite;
+  letter-spacing: 2rem;
+  margin-right: -2rem;
+}
+
+.title2{
+	color: rgb(0, 0, 0);
+	font-family: Bebas;
+	font-size: 175%; 
+	text-decoration: none;
+  margin: 0px;
+  font-weight: lighter;
+  width: 100%;
+  height: min-content;
+}
+
+
+
+
+
+
+/*Texts Style*/
+p{
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  line-height: 150%;
+  font-size: inherit;
+}
+
+.parts_text{
+  width: 60%;
+}
+
+.text{
+  width: auto;
+  height: auto;
+}
+
+/*Images Style*/
+.image_parts{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+
+#equipe_image{
+  border-radius: 10px;
+  max-width: 90%;
+}
+
+
+/*Underlined Words Style*/
+.underline{
+	color: #ff0000;
+	text-decoration: none;
+	font-family: inherit;
+  margin-bottom: 0.5%;
+  display: block;
+  font-size: 150%;
+  width: max-content;
+}
+
+.underline:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 7px;
+  left: 50%;
+  position: inherit;
+  background: #ff0000;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.underline:hover:after { 
+  width: 100%;  
+}
+
+@media screen and (max-height: 0%) {
+	.underline {
+		margin-top: 0px;
+	}
+}
+
+
+
+
+
+/* Categories Style*/
+
+.parts{
+  padding: 2%;
+  border-radius: 30px;
+  width: 95%;
+  margin: .5%;
+  align-items: center; 
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+#equipe,#objectifs{
+  background-color: #d5d5d5;
+}
+
+#projet{
+  background-color: inherit;
+  border: 100px; 
+  border-color: black;
+}
+
+
+
+
+
+
+/*Credits Style*/
+#sponso{
+  float: left;
+  text-align: center;
+  line-height: 50px;
+  font-size: 30px;
+  width: 33%;
+}
+
+.sponso_link{
+	font-family: Roboto_Slab;
+  font-weight: 400;
+	text-decoration: none;
+	color: rgb(255, 30, 30);
+}
+
+.sponso_link:active{
+	color: rgb(255, 30, 30);
+}
+
+.sponso_link:visited{
+	color: rgb(170, 0, 0)
+}
+
+.sponso_link:hover{
+  color: rgb(150, 25, 25);
+	transition: 0.5s;
+  font-weight: 700;
+}
+
+
+
+#designers{
+  float: left;
+  text-align: center;
+  line-height: 50px;
+  font-size: 30px;
+  width: 33%;
+}
+
+#devs{
+  float: left;
+  text-align: center;
+  line-height: 50px;
+  font-size: 30px;
+  width: 33%;
+}
+
+.cred_list{
+  list-style-type: none;
+  padding: 0%;
+}
+
+
+
+
+
+
+/*Separators Style*/
+hr{
+  width: 93%;
+  border-width: 3px;
+  border-radius: 5px;
+  border-color: black;
+  border-style: solid;
+  display: flex;
+  margin-bottom: 0%;
+}
+
+
+
+
+
+footer{
+	-ms-overflow-style: none;
+        overflow: hidden;
+		overflow-x: hidden;
+        overflow-y: scroll;
+
+	background-color : rgb(230, 230, 230);
+	font-family : Roboto_Slab;
+  letter-spacing: 105%;
+	font-size : 28px;	
+  border-top: 7px solid black;
+	overflow: hidden;
+  margin: 0%;
+  margin-top: 3%;
+  padding: 20px;
+  z-index: 3;
+}
+
+
+
+
+
+
+/**/
