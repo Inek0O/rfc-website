@@ -41,7 +41,7 @@
 			que nous pouvons <b>atteindre</b> nos divers objectifs !</p>
 		</div>
 		<div class="image_parts">
-			<img id="equipe_image" src="<?=$base?>/images/TeamImage1.png">
+			<img id="equipe_image" src="./images/TeamImage1.png">
 		</div>
 	</div>
 	<br>

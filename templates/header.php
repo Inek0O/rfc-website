@@ -1,8 +1,8 @@
 <div class="cursor"></div>
 <div class="cursor2"></div>
-<script src="/rfc-website/index.js"></script>
+<script src="./index.js"></script>
 <div id="banner">
-    <img id="logo_top" src="/rfc-website/images/Top_Frame 6.png">
+    <img id="logo_top" src="./images/Top_Frame 6.png">
 </div>
 <div id="haut">
     <nav>

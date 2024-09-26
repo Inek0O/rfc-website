@@ -5,7 +5,7 @@ require('lib/router.php');
 
 <head>
 	<meta charset = Utf8 >
-	<link rel="stylesheet" href="<?=$base?>/index.css">
+	<link rel="stylesheet" href="./index.css">
 	<title>Robotique First Côtière</title>
 </head>
 
