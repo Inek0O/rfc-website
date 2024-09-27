@@ -1,4 +1,3 @@
-
 <div id="news">
 	<div id="n1" class="info">
 		<p class=titre_news>Début de la saison 2024 !</p>
