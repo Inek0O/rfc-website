@@ -140,10 +140,6 @@ body {
   border-bottom : 7px solid black;
 }
 
-#haut.onscroll{
-  position: fixed;
-}
-
 nav ul {
   margin: 0%;
   padding: 0px;
@@ -399,70 +395,6 @@ p{
   background-color: #d5d5d5;
 }
 
-#projet{
-  background-color: inherit;
-  border: 100px; 
-  border-color: black;
-}
-
-
-
-
-
-
-/*Credits Style*/
-#sponso{
-  float: left;
-  text-align: center;
-  line-height: 50px;
-  font-size: 30px;
-  width: 33%;
-}
-
-.sponso_link{
-	font-family: Roboto_Slab;
-  font-weight: 400;
-	text-decoration: none;
-	color: rgb(255, 30, 30);
-}
-
-.sponso_link:active{
-	color: rgb(255, 30, 30);
-}
-
-.sponso_link:visited{
-	color: rgb(170, 0, 0)
-}
-
-.sponso_link:hover{
-  color: rgb(150, 25, 25);
-	transition: 0.5s;
-  font-weight: 700;
-}
-
-
-
-#designers{
-  float: left;
-  text-align: center;
-  line-height: 50px;
-  font-size: 30px;
-  width: 33%;
-}
-
-#devs{
-  float: left;
-  text-align: center;
-  line-height: 50px;
-  font-size: 30px;
-  width: 33%;
-}
-
-.cred_list{
-  list-style-type: none;
-  padding: 0%;
-}
-
 
 
 
@@ -483,27 +415,114 @@ hr{
 
 
 
+
+/*Footer Style*/
 footer{
 	-ms-overflow-style: none;
         overflow: hidden;
 		overflow-x: hidden;
         overflow-y: scroll;
 
-	background-color : rgb(230, 230, 230);
+	background-color : #111;
 	font-family : Roboto_Slab;
-  letter-spacing: 105%;
-	font-size : 28px;	
+	font-size : 15px;	
   border-top: 7px solid black;
 	overflow: hidden;
   margin: 0%;
   margin-top: 3%;
-  padding: 20px;
-  z-index: 3;
+  padding-bottom: 20px;
+  text-decoration: none;
+  list-style-type: none;
 }
 
+#footer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
+.footer_divs{
+  padding: 1%;
+  flex-wrap: wrap;
+  width: 100%;
+}
 
+.footer_divs a{
+  text-decoration: none;
+  color: #FFF;
+}
 
+.footer_divs a:hover{
+  text-decoration: underline;
+}
 
+.footer_list{
+  list-style-type: none;
+  padding: 1%;
+  text-decoration: none;
+  line-height: 150%;
+}
+
+.footer_title{
+  height: min-content;
+  margin-bottom: 4%;
+  font-size: 175%;
+}
+
+#index{
+  width: 100%;
+}
+
+#sponsors{
+  display: flex;
+  justify-content: center;
+}
+
+#sponsor_list{
+  list-style-type: none;
+  padding: 0%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.sponsors_link{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.sponsor_logo{
+  max-height: 75px;
+
+}
+
+#other_team_banner{
+  background-color: #1B368B;
+  height: max-content;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  margin-top: 5%;
+  height: 100px;
+}
+
+.other_team_element{
+  max-height: 100px;
+}
+
+#other_team_logo{
+  max-height: 100px;
+  margin: 1%;
+}
+
+#other_team_text{
+  margin: auto;
+  margin-left: 2%;
+  font-size: 300%;
+  font-family: Bebas;
+  font-style: italic;
+  color: #F0F0F0;
+  text-decoration: none;
+}
 
 /**/
