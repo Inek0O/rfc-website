@@ -1,11 +1,12 @@
 <?php
-require('lib/router.php');
-?><!DOCTYPE html>
+	require('lib/router.php');
+?>
+<!DOCTYPE html>
 <html>
 
 <head>
 	<meta charset = Utf8 >
-	<link rel="stylesheet" href="<?=$base?>/index.css">
+	<link rel="stylesheet" href="index.css">
 	<title>Robotique First Côtière</title>
 </head>
 
