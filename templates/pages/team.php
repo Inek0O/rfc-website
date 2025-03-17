@@ -1,4 +1,4 @@
-<script src="/rfc-website/index.js"></script>
+<script src="<?= $base ?>/index.js"></script>
 
 <div id="main">
 
