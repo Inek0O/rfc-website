@@ -1,5 +1,3 @@
-// UPDATE: I was able to get this working again... Enjoy!
-
 var cursor = document.querySelector('.cursor');
 var cursorinner = document.querySelector('.cursor2');
 var a = document.querySelectorAll('a');

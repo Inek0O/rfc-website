@@ -13,6 +13,6 @@
 </div>
 <style> 
 	#card-<?php echo $cardkey ?>::after {
-	background-image: url(<?php echo $card["image"] ?>);
+	background-image: url(<?php echo $base . '/' . $card["image"] ?>);
 	}
 </style>
