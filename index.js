@@ -132,9 +132,10 @@ document.addEventListener('DOMContentLoaded', function () {
     arcPath.setAttribute('stroke-linecap', 'round');
     arcPath.setAttribute('stroke-linejoin', 'round');
     
-    // We'll set the actual length later
-    arcPath.setAttribute('stroke-dasharray', radius * Math.PI * 2);
-    arcPath.setAttribute('stroke-dashoffset', radius * Math.PI * 2);
+    // Calculate the actual path length immediately
+    const pathLength = arcPath.getTotalLength();
+    arcPath.setAttribute('stroke-dasharray', pathLength);
+    arcPath.setAttribute('stroke-dashoffset', pathLength);
     
     arcGroup.appendChild(arcPath);
 
@@ -154,6 +155,7 @@ document.addEventListener('DOMContentLoaded', function () {
     line.setAttribute('transform', `translate(${x + offset} ${y})`);
     line.setAttribute('stroke-dasharray', 25);
     line.setAttribute('stroke-dashoffset', 25);
+    line.style.opacity = 0; // Start with opacity 0
     arcGroup.appendChild(line);
 
     // Add text labels
@@ -181,41 +183,35 @@ document.addEventListener('DOMContentLoaded', function () {
     
     // When the circle animation completes
     defaultCircle.addEventListener('transitionend', () => {
-      // Get all paths and set their actual lengths
-      const paths = document.querySelectorAll('svg > g > g > path');
-      paths.forEach((path) => {
-        const length = path.getTotalLength();
-        path.setAttribute('stroke-dasharray', length);
-        path.setAttribute('stroke-dashoffset', length);
-      });
-
       // Animate arcs sequentially
-      paths.forEach((path, i) => {
+      const arcGroups = document.querySelectorAll('svg > g > g');
+      
+      arcGroups.forEach((arcGroup, i) => {
+        const path = arcGroup.querySelector('path');
+        const line = arcGroup.querySelector('line');
+        const text = arcGroup.querySelector('text');
+        
         const duration = 1000; // 1 second per arc
-        path.style.transition = `stroke-dashoffset ${duration}ms linear ${i * duration}ms`;
+        const delay = i * duration;
+        
+        // Animate arc
+        path.style.transition = `stroke-dashoffset ${duration}ms ease-in-out ${delay}ms`;
         setTimeout(() => {
           path.setAttribute('stroke-dashoffset', 0);
-        }, 10); // Small timeout to ensure the transition is applied
-      });
-
-      // Animate lines
-      const lines = document.querySelectorAll('svg > g > g > line');
-      lines.forEach((line, i) => {
-        const duration = 1000; // 1 second per arc
-        line.style.transition = `stroke-dashoffset ${duration/3}ms linear ${i * duration + duration/2.5}ms`;
+        }, 10);
+        
+        // Animate line after arc is halfway done
+        line.style.transition = `stroke-dashoffset ${duration/2}ms ease-in-out ${delay + duration/2}ms, opacity ${duration/4}ms ease-in-out ${delay + duration/2}ms`;
         setTimeout(() => {
+          line.style.opacity = 1;
           line.setAttribute('stroke-dashoffset', 0);
         }, 10);
-      });
-
-      // Animate texts
-      const texts = document.querySelectorAll('svg > g > g > text');
-      texts.forEach((text, i) => {
-        const duration = 1000; // 1 second per arc
-        text.style.transition = `opacity ${duration/2}ms linear ${i * duration + duration/2}ms, visibility ${duration/2}ms linear ${i * duration + duration/2}ms`;
+        
+        // Animate text after line is done
+        text.style.transition = `opacity ${duration/3}ms ease-in-out ${delay + duration*0.75}ms, visibility 0s linear ${delay + duration*0.75}ms`;
         setTimeout(() => {
-          text.style.opacity = 1;
           text.style.visibility = 'visible';
+          text.style.opacity = 1;
         }, 10);
       });
     });
@@ -243,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Function to describe an arc path - MODIFIED to fix clipping
+  // Function to describe an arc path
   function describeArc(x, y, radius, startAngle, endAngle) {
     const start = polarToCartesian(x, y, radius, endAngle);
     const end = polarToCartesian(x, y, radius, startAngle);
