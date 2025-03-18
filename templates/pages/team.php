@@ -1,4 +1,12 @@
+<<<<<<< Updated upstream
 <script src="/rfc-website/index.js"></script>
+=======
+<<<<<<< Updated upstream
+<script src="<?= $base ?>/index.js"></script>
+=======
+<script src="././index.js"></script>
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
 <div id="main">
 
